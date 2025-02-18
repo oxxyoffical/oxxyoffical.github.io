@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Page</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Stack elements vertically */
+            overflow: hidden;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        #text {
+            opacity: 1;
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            transition: opacity 2s ease, transform 2s ease; /* Smooth fade and move transition */
+            transform: translateY(0); /* Final position */
+        }
+
+        .link-container {
+            display: flex;
+            opacity: 0; /* Initially invisible */
+            margin-top: 20px; /* Space between text and images */
+            transition: opacity 2s ease; /* Smooth fade-in */
+        }
+
+        .link-container img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            transition: transform 0.3s ease; /* Add hover effect */
+        }
+
+        .link-container img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from images */
+        }
+    </style>
+</head>
+<body>
+    <div id="text">OXXY444 the first pendulum of R</div>
+
+    <!-- Link containers with images -->
+    <div class="link-container" id="links">
+        <a href="https://b20hidden.web.app/" target="_blank">
+            <img src="https://via.placeholder.com/100?text=HiddenInventory" alt="Link 1">
+        </a>
+        <a href="https://soundwithoutyetmeaning.com/" target="_blank">
+            <img src="https://via.placeholder.com/100?text=SWYM" alt="Link 2">
+        </a>
+        <a href="https://sixyr.netlify.app/" target="_blank">
+            <img src="https://via.placeholder.com/100?text=6YearRecord" alt="Link 3">
+        </a>
+        <a href="https://howareyourcolorsandshapes.com/" target="_blank">
+            <img src="https://via.placeholder.com/100?text=howareyourcolorsandshapes" alt="Link 4">
+        </a>
+    </div>
+
+    <script>
+        // Smoothly fade out the text after 2 seconds
+        setTimeout(() => {
+            const textElement = document.getElementById('text');
+            textElement.style.opacity = 0; // Fade out
+        }, 2000); // 2-second delay before fading out
+
+        // After 2 seconds of the text fading out, make the images appear smoothly
+        setTimeout(() => {
+            const linkContainer = document.getElementById('links');
+            linkContainer.style.opacity = 1; // Fade in images
+        }, 4000); // 2 seconds for text fade + 2 seconds delay = 4 seconds total
+    </script>
+</body>
+</html>
+
+
+
